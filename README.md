@@ -171,7 +171,7 @@ Terakhir, kita merangkai handler catch() di bagian akhir, untuk menangkap error 
 
 ## JavaScript Intermdiate - Asynchronous - Async Await
 
-# Git & Github Lanjutan
+# Git & Github Lanjutan (Kolaborasi)
 
 
 # Responsive Web Design
