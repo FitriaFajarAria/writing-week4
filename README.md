@@ -135,10 +135,44 @@ Seperti yang kita lihat di atas, Instance respons dikembalikan saat promise fetc
   - Response.statusText
   - Response.ok 
   
+### Fetching data from the server
+
+Hal lain yang sangat umum di situs web dan aplikasi modern adalah mengambil item data individual dari server untuk memperbarui bagian halaman web tanpa harus memuat seluruh halaman baru. Detail yang tampaknya kecil ini berdampak besar pada kinerja dan perilaku situs. Halaman web terdiri dari halaman HTML dan (biasanya) berbagai file lain, seperti stylesheet, skrip, dan gambar. Model dasar pemuatan halaman di Web adalah browser membuat satu atau lebih permintaan HTTP ke server untuk file yang diperlukan untuk menampilkan halaman, dan server merespons dengan file yang diminta. Jika kita mengunjungi halaman lain, browser meminta file baru, dan server meresponsnya. Banyak situs web menggunakan API JavaScript untuk meminta data dari server dan memperbarui konten halaman tanpa memuat halaman. Jadi ketika pengguna mencari produk baru, browser hanya meminta data yang diperlukan untuk memperbarui halaman.
+
+API utama di sini adalah Fetch API. Ini memungkinkan JavaScript yang berjalan di halaman untuk membuat permintaan HTTP ke server untuk mengambil sumber daya tertentu. Saat server menyediakannya, JavaScript dapat menggunakan data untuk memperbarui halaman, biasanya dengan menggunakan API manipulasi DOM. Data yang diminta seringkali berupa JSON, yang merupakan format yang baik untuk mentransfer data terstruktur, tetapi bisa juga berupa HTML atau hanya teks.
+
+                  const verseChoose = document.querySelector('select');
+                  const poemDisplay = document.querySelector('pre');
+
+                  verseChoose.addEventListener('change', () => {
+                  const verse = verseChoose.value;
+                  updateDisplay(verse);
+                  });
+
+
+Ini menyimpan referensi ke elemen <select> dan <pre> dan menambahkan listener ke elemen <select>, sehingga ketika kita memilih nilai baru, nilai baru diteruskan ke fungsi bernama updateDisplay() sebagai parameter. Fetch API adalah fungsi global yang disebut fetch(), yang menggunakan URL sebagai parameter selanjutnya, fetch() adalah API asinkron yang mengembalikan Promise. Jadi karena fetch() mengembalikan promise, =kita meneruskan fungsi ke metode then() dari promise yang dikembalikan, metode ini akan dipanggil ketika permintaan HTTP telah menerima respons dari server. Di handler, memeriksa apakah permintaan berhasil dan membuat kesalahan jika tidak. Jika tidak, maka memanggil response.text(), untuk mendapatkan isi respons sebagai teks. Ternyata response.text() juga tidak sinkron, jadi mengembalikan promise yang dikembalikannya, dan meneruskan fungsi ke metode then() dari promise baru ini. Fungsi ini akan dipanggil ketika teks respons sudah siap, dan di dalamnya kita akan memperbarui blok kita dengan teks. Contoh blok pertama yang menggunakan Fetch dapat ditemukan di awal JavaScript:
+
+
+
+                   fetch('products.json')
+                   .then((response) => {
+                   if (!response.ok) {
+                   throw new Error(`HTTP error: ${response.status}`);
+                   }
+                   return response.json();
+                   })
+                   .then((json) => initialize(json))
+                   .catch((err) => console.error(`Fetch problem: ${err.message}`));
+
+
+
+Terakhir, kita merangkai handler catch() di bagian akhir, untuk menangkap error yang terjadi di salah satu fungsi asinkron yang kita panggil atau handlernya. Fungsi fetch() mengembalikan promise jika ini berhasil diselesaikan, fungsi di dalam blok .then() pertama berisi respons yang dikembalikan dari jaringan.
+
 
 ## JavaScript Intermdiate - Asynchronous - Async Await
 
 # Git & Github Lanjutan
+
 
 # Responsive Web Design
 
