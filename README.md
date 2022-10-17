@@ -171,6 +171,46 @@ Terakhir, kita merangkai handler catch() di bagian akhir, untuk menangkap error 
 
 ## JavaScript Intermdiate - Asynchronous - Async Await
 
+### Async
+
+async function adalah fitur baru dari javascript yang ditambahkan pada tahun 2017. Sebelumnya kita telah belajar menulis kode asynchronous dengan menggunakan Promise, nah Async function adalah cara mudah untuk menjadikan fungsi apapun menjadi Promise dengan hanya menambah keyword async.
+
+        / buat sebuah async function
+        const myAsync = async function () {
+        let x = 10
+        if (x <= 10) {
+        // Tidak perlu menggunakan resolve, cukup return
+       // untuk memberi tanda bahwa async function selesai
+        return "Nilai kurang dari atau sama dengan 10"
+        }
+        throw Error("Nilai lebih dari 10")
+        }
+
+        // Karena Async function menghasilkan Promise
+       // maka kita bisa gunakan method then dan catch juga
+        myAsync()
+        .then((pesan) => {
+         console.log(pesan)
+        })
+        .catch((err) => {
+        console.log(err)
+        })
+
+### Await
+
+Operator await digunakan untuk menunggu Promise selesai (resolved), nilai yang didapatkan oleh await bisa berupa Promise maupun data biasa dalam bentuk resolved Promised. await hanya bisa digunakan di dalam sebuah async function.
+
+        const getData = async () => {
+        let data = await window.fetch("...")
+        let obj = await data.json() // dijalankan hanya jika variabel data terisi
+        console.log(obj) // dijalankan hanya jika variabel obj terisi
+        }
+
+          getData().catch((err) => {
+          console.log(err)
+      })
+      console.log("...")
+
 
 # Git & Github Lanjutan (Kolaborasi)
 
