@@ -173,7 +173,7 @@ Terakhir, kita merangkai handler catch() di bagian akhir, untuk menangkap error 
 
 # Git & Github Lanjutan (Kolaborasi)
 
-
+Berkontribusi pada open source dapat menjadi cara yang bermanfaat untuk belajar, mengajar, dan membangun pengalaman dalam keterampilan apa pun yang dapat kita bayangkan.
 # Responsive Web Design
 
 
