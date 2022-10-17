@@ -173,8 +173,125 @@ Terakhir, kita merangkai handler catch() di bagian akhir, untuk menangkap error 
 
 # Git & Github Lanjutan (Kolaborasi)
 
-Berkontribusi pada open source dapat menjadi cara yang bermanfaat untuk belajar, mengajar, dan membangun pengalaman dalam keterampilan apa pun yang dapat kita bayangkan.
+Berkontribusi pada open source dapat menjadi cara yang bermanfaat untuk belajar, mengajar, dan membangun pengalaman dalam keterampilan apa pun yang dapat kita bayangkan.  CI, adalah strategi alur kerja yang memastikan semua modifikasi yang dibuat digabungkan dengan versi terbaru cabang master sangat sering untuk semua pengembang dalam tim, dalam pengembangan sumber terbuka. Contoh layanan yang menyediakan CI adalah GitHub, di mana setiap pengembang dapat membuat garpu (salinan independen) dari repositori untuk membuat Permintaan Tarik untuk meminta pekerjaan mereka (komit) untuk digabungkan, ditinjau dengan komentar dan saran, atau ditutup. Di dunia proyek software, tidak dapat dihindari bahwa kita akan menemukan diri kita bekerja dalam tim untuk menghasilkan proyek.
+
+###  Organisasi & Kolaborator
+
+#### Menambahkan Anggota Tim
+
+Biasanya ada dua cara menyiapkan Github untuk kolaborasi tim:
+1. Organizations - Pemilik organisasi dapat membuat banyak tim dengan tingkat izin yang berbeda untuk berbagai repositori.
+2. Collaborators - Pemilik repositori dapat menambahkan kolaborator dengan akses Baca + Tulis untuk satu repositori.
+
+- Organizations
+Jika ingin mengawasi beberapa tim dan ingin menetapkan tingkat izin yang berbeda untuk setiap tim dengan berbagai anggota dan menambahkan setiap anggota ke repositori yang berbeda, maka Organization akan menjadi pilihan terbaik. Akun pengguna Github apa pun sudah dapat membuat Organizations gratis untuk repositori open source.
+- Collaborators
+Collaborators digunakan untuk memberikan akses Read + Write access ke satu repositori yang dimiliki oleh akun pribadi. Untuk menambahkan Collaborators, (akun pribadi Github lainnya), masing-masing Collaborator kemudian akan melihat perubahan dalam status akses pada halaman repositori. Setelah kita memiliki akses Write ke repositori, kita dapat melakukan git clone, bekerja pada perubahan, membuat git pull untuk mengambil dan menggabungkan setiap perubahan dalam repositori jarak jauh dan akhirnya git push, untuk memperbarui repositori jarak jauh dengan perubahan kita sendiri:
+
+#### Pull Requests
+
+Pull Requests adalah jika kita mau, kita dapat mengirim permintaan tarik ke pemilik repositori untuk menggabungkan perubahan kode kita. Pull request itu sendiri dapat memicu diskusi untuk kualitas kode, fitur atau bahkan strategi umum.
+Ada dua model pull request di Github:
+1. Fork & Pull Model - Digunakan di repositori publik yang tidak memiliki akses push
+2. Share Repository Model - Digunakan dalam repositori pribadi yang kita miliki akses push.
+
+####  Analytics
+
+Github Graphs memberikan wawasan tentang kolaborator dan komitmen di balik setiap repositori kode, sementara Github Network menyediakan visualisasi pada setiap kontributor dan komitmennya di seluruh repositori bercabang. Analisis dan grafik ini menjadi sangat kuat, terutama ketika bekerja dalam tim.
+- Graphs
+Grafik menyediakan analisis rinci seperti:
+1. Contributors: Siapa yang kontributor? Dan berapa banyak baris kode yang mereka tambahkan atau hapus?
+2. Commit Activity: Minggu-minggu mana komit berlangsung dalam setahun terakhir?
+3. Code Frequency: Berapa banyak baris kode yang dilakukan sepanjang siklus hidup proyek?
+4. Punchcard: Selama waktu apa waktu melakukan biasanya dilakukan?
+
+- Network
+Github Network adalah alat canggih yang memungkinkan kita melihat setiap komitmen kontributor dan bagaimana mereka terkait satu sama lain. Ketika kita melihat visualizer secara keseluruhan, kita melihat setiap commit pada setiap cabang dari setiap repositori yang dimiliki jaringan.
+
+
 # Responsive Web Design
+
+Responsive web design (RWD) bertujuan untuk membuat design wesbite kita dapat diakses oleh divice apapun. Desain Web Responsif adalah pendekatan yang menyarankan bahwa desain dan pengembangan harus merespons perilaku dan lingkungan pengguna berdasarkan ukuran layar, platform, dan orientasi. Praktik ini terdiri dari campuran grid dan tata letak yang fleksibel, gambar, dan penggunaan kueri media CSS yang cerdas. Saat pengguna beralih dari laptop ke divice yang lain, situs web akan secara otomatis beralih untuk mengakomodasi resolusi, ukuran gambar, dan kemampuan skrip. Menambahkan viewport (Area pandang/area tampilan poligon dalam grafik komputer) kedalam HTML
+
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                      
+                      
+### Media Query
+
+Media query adalah fungsi dari css untuk menggunakan css tertentu jika syarat yang ditentukan dipenuhi. Media query merupakan komponen penting untuk membuat web responsive layout. Media query merupakan modul CSS3 yang berguna membuat layout kita responsive dengan menyesuaikan tampilan berdasarkan ukuran layar perangkat. 
+Terkadang tampilan yang sudah kita desain dengan sedemikian rupa bisa kacau jika ditampilkan pada tampilan mobile. Dengan media query kita dapat menyelesaikan masalah ini dengan menentukan aturan ukuran dan tata letak elemen dengan kondisi-kondisi tertentu
+
+Media query juga disebut dengan Breakpoint, karena cara kerja media query yakni dengan cara mengecheck ukuran viewport(layar/area dimana konten terlihat) apakah sesuai dengan kondisi yang kita deklarasikan, jika benar maka kode dalam kondisi tersebut yang akan dieksekusi. Dengan kata lain media query memberikan kemampuan menggunakan kode css yang sesuai dengan kondisi yang ditentukan.
+
+                       <link rel="stylesheet" media="screen and (max-width: 300px)" href="s300.css">
+                       
+Perintah diatas menunjukan browser agar load file s300.css bila ukuran viewport <= 300px dengan media screen. Property media yang disupport adalah screen, print dan lain-lain Ada beberapa cara menggunakan media query
+
+        - Melalu link tag seperti contoh diatas
+        - Menggunakan @media
+        - Menggunakan @import
+                       
+CSS media queries digunakan untuk membatasiÂ  ruang CSS, artinya CSS yang kita buat melalui media queries ini hanya berjalan di ukuran labar layar tertentu, misalnya:
+
+                        @media screen and (max-width: 600px) {
+                                 article{
+                	background :red !important;
+  	
+                        }
+                        }
+                        
+Dari contoh script di atas, dapat kita lihat bahwa property CSS background red pada article hanya berlaku pada ukuran maksimal 600px, ketika tampilan web lebih dari 600px maka background tersebut tidak akan berlaku lagi.   
+
+#### Eksternal & internal media query
+Kita dapat menggunakan media query dengan cara berikut
+
+Cara 1:
+
+Dengan menggunakan tag <link> di dalam elemen head
+
+                <head>
+                <link rel=”stylesheet” media=”screen and (min-width: 600px)” href=”laptop_styles.css”>
+                <link rel=”stylesheet” media=”screen and (min-width: 320px) and (max-width: 360)” href=”mobile_styles.css”>
+                </head>
+                
+Cara 2:
+
+Kita definisikan dengan rule @media di dalam internal css atau file css terpisah   
+
+                @media screen and (min-width: 240px) and (max-width: 480px) {
+                p {
+                font-size: 11px;
+                }
+                }
+                
+                
+#### Media Features
+
+Untuk menentukan kondisi kita bisa menyertakan media features di bawah ini dengan nilai batas nantinya sebuah rules akan dieksekusi. Media featurs harus berada dalam tanda kurung. 
+
+1. width
+2. height
+3. device-width
+4. device-height
+5. aspect-ratio
+6. device-aspect-ratio
+7. color
+8. color-index
+9. monochrome
+10. resolution
+11. orientation
+12. scan
+13. grid
+Contoh penggunaan
+
+(orientation: landscape)
+(orientation: potrait)
+Beberapa memiliki min- dan max-. contoh
+
+(min-width: 200px) 
+(max-width: 760px)
+(min-device-width: 200px)
+(max-device-width: 800px)    
 
 
 #Bootstrap 5
