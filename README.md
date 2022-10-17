@@ -171,6 +171,7 @@ Terakhir, kita merangkai handler catch() di bagian akhir, untuk menangkap error 
 
 ## JavaScript Intermdiate - Asynchronous - Async Await
 
+
 # Git & Github Lanjutan (Kolaborasi)
 
 Berkontribusi pada open source dapat menjadi cara yang bermanfaat untuk belajar, mengajar, dan membangun pengalaman dalam keterampilan apa pun yang dapat kita bayangkan.  CI, adalah strategi alur kerja yang memastikan semua modifikasi yang dibuat digabungkan dengan versi terbaru cabang master sangat sering untuk semua pengembang dalam tim, dalam pengembangan sumber terbuka. Contoh layanan yang menyediakan CI adalah GitHub, di mana setiap pengembang dapat membuat garpu (salinan independen) dari repositori untuk membuat Permintaan Tarik untuk meminta pekerjaan mereka (komit) untuk digabungkan, ditinjau dengan komentar dan saran, atau ditutup. Di dunia proyek software, tidak dapat dihindari bahwa kita akan menemukan diri kita bekerja dalam tim untuk menghasilkan proyek.
@@ -295,3 +296,31 @@ Beberapa memiliki min- dan max-. contoh
 
 
 #Bootstrap 5
+
+Bootstrap adalah framework HTML, CSS, dan JavaScript yang berfungsi untuk mendesain website responsive dengan cepat dan mudah. 
+Framework open source ini diciptakan pada tahun 2011 oleh Mark Otto dan Jacob Thornton dari Twitter. Itulah kenapa dulunya Bootstrap dinamakan Twitter Blueprint. 
+Bootstrap dengan cepat meraih popularitas digunakan oleh 27% website di seluruh dunia. Hal itu karena kesederhanaan dan konsistensi yang ditawarkan Bootstrap dibanding framework lainnya saat itu. Kemudahan yang ditawarkan oleh Bootstrap adalah Anda tak perlu coding komponen website dari nol. Framework ini tersusun dari kumpulan file CSS dan JavaScript berbentuk class yang tinggal pakai. Class yang disediakan Bootstrap juga cukup lengkap. Mulai dari class untuk layout halaman, class menu navigasi, class animasi, dan masih banyak lainnya. Menariknya lagi, Bootstrap bersifat responsive berkat grid system yang digunakan. Sistem grid pada bootstrap menggunakan rangkaian containers, baris, dan kolom untuk menyesuaikan bentuk layout dan konten website Anda. Dengan kata lain, Bootstrap menjamin tampilan website Anda akan tetap rapi dan konsisten di berbagai perangkat pengunjung. Baik melalui smartphone, tablet, atau laptop, kegunaan Bootsrap
+
+- Menciptakan website Mobile Friendly —Berkat sistem grid, proses membuat website mobile friendly tak akan membutuhkan waktu lama.
+- Memudahkan resize gambar — Cukup dengan menambahkan class .img-responsive ke gambar, maka gambar tersebut akan otomatis di-resize sesuai ukuran layar pengguna.
+- Menambahkan elemen website tanpa ribet — Bootstrap menyediakan berbagai elemen yang bisa langsung Anda gunakan di website. Misalnya, navigasi, menu dropdown,           thumbnail, dan sebagainya.
+- Membuat website lebih interaktif — Bootstrap juga memungkinkan Anda menggunakan plugin custom JQuery. Jadi, Anda bisa menambahkan berbagai elemen interaktif ke         website dengan mudah. Misalnya, popup, transisi, image carousel, dan sebagainya.
+
+### Important globals 
+
+Bootstrap menggunakan beberapa gaya dan pengaturan global yang semuanya hampir secara eksklusif diarahkan untuk normalisasi gaya lintas browser.
+
+- Responsive meta tag 
+Bootstrap dikembangkan terlebih dahulu untuk seluler, sebuah strategi untuk mengoptimalkan kode untuk perangkat seluler terlebih dahulu dan kemudian meningkatkan komponen seperlunya menggunakan kueri media CSS. Untuk memastikan rendering yang tepat dan zoom sentuh untuk semua perangkat, tambahkan tag meta area pandang responsif ke <head>.
+                
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                
+- Box-sizing 
+
+                .selector-for-some-widget {
+                box-sizing: content-box;
+                }
+                
+- Reboot 
+
+Untuk rendering lintas-browser yang lebih baik, kita menggunakan Reboot untuk memperbaiki ketidakkonsistenan di seluruh browser dan perangkat sambil memberikan pengaturan ulang yang sedikit lebih sesuai untuk elemen HTML umum.
