@@ -335,7 +335,7 @@ Beberapa memiliki min- dan max-. contoh
 (max-device-width: 800px)    
 
 
-#Bootstrap 5
+# Bootstrap 5
 
 Bootstrap adalah framework HTML, CSS, dan JavaScript yang berfungsi untuk mendesain website responsive dengan cepat dan mudah. 
 Framework open source ini diciptakan pada tahun 2011 oleh Mark Otto dan Jacob Thornton dari Twitter. Itulah kenapa dulunya Bootstrap dinamakan Twitter Blueprint. 
